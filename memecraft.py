@@ -68,10 +68,10 @@ def update():
 
     if held_keys['escape']: sys.exit(0)
 
-    # respawn/teleport to (8, 7, 15) after falling in void
+    # respawn/teleport to (0, y, 0) after falling in void
     if player.position.y < -10:
         # messagebox.showinfo('MemeCraft', 'You died by falling in the void! Press OK to respawn.')
-        player.set_position(Vec3(8, 7, 15))
+        player.set_position(Vec3(0, 7, 0))
 
 # voxel aka blocks object
 class Voxel(Button):
@@ -151,16 +151,26 @@ class CurrentBlockIcon(Entity):
         )
 
 # world generation
-for x in range(20):
-    for z in range(20):
+for x in range(10):
+    for z in range(10):
         # generate first layer as stone block
         Voxel(position = (x,0,z), texture=textures['stone_texture'])
+        Voxel(position = (x*(-1),0,z*(-1)), texture=textures['stone_texture'])
+        Voxel(position = (x*(-1),0,z), texture=textures['stone_texture'])
+        Voxel(position = (x,0,z*(-1)), texture=textures['stone_texture'])
+
         for y in range(4):
             # generate the rest as dirt
             Voxel(position = (x,y + 1,z), texture=textures['dirt_texture'])
+            Voxel(position = (x*(-1),y+1,z*(-1)), texture=textures['dirt_texture'])
+            Voxel(position = (x,y+1,z*(-1)), texture=textures['dirt_texture'])
+            Voxel(position = (x*(-1),y+1,z), texture=textures['dirt_texture'])
 
         # generate the topmost layer as grass blocks
         Voxel(position = (x,5,z), texture=textures['grass_texture'])
+        Voxel(position = (x*(-1),5,z*(-1)), texture=textures['grass_texture'])
+        Voxel(position = (x*(-1),5,z), texture=textures['grass_texture'])
+        Voxel(position = (x,5,z*(-1)), texture=textures['grass_texture'])
 
 # create a sky
 sky = Sky()
@@ -197,14 +207,14 @@ def genTree(position):
     Voxel(position = (position, 10, position), texture=textures['stone_texture'])
 
 # generate random amount of trees on random coordinates
-treeGenAmt = random.randint(3, 5)
+treeGenAmt = random.randint(2, 4)
 
 for i in range(treeGenAmt):
-    genTree(random.randint(4, 18))
+    genTree(random.randint(-9, 9))
         
 # enable coordinate displayer
 cordsText = CoordinatesCounter()
-# spawn player to ground so that player isn't stuck in ground
-player.set_position((8, 7, 15))
+# teleport player to ground so that thet player isnt stuck in ground
+player.set_position((0.0, 5.0, 0.0))
 # start the game
 app.run()
