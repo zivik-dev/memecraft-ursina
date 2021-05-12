@@ -71,7 +71,7 @@ def update():
     # respawn/teleport to (0, y, 0) after falling in void
     if player.position.y < -10:
         # messagebox.showinfo('MemeCraft', 'You died by falling in the void! Press OK to respawn.')
-        player.set_position(Vec3(0, 7, 0))
+        player.set_position(Vec3(8, 7, 15))
 
 # voxel aka blocks object
 class Voxel(Button):
@@ -205,6 +205,6 @@ for i in range(treeGenAmt):
 # enable coordinate displayer
 cordsText = CoordinatesCounter()
 # spawn player to ground so that player isn't stuck in ground
-player.set_position((0, 9.5, 0))
+player.set_position((8, 7, 15))
 # start the game
 app.run()
