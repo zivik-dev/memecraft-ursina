@@ -68,7 +68,7 @@ def update():
 
     if held_keys['escape']: sys.exit(0)
 
-    # respawn/teleport to (0, y, 0) after falling in void
+    # respawn/teleport to (8, 7, 15) after falling in void
     if player.position.y < -10:
         # messagebox.showinfo('MemeCraft', 'You died by falling in the void! Press OK to respawn.')
         player.set_position(Vec3(8, 7, 15))
