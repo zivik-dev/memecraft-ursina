@@ -204,7 +204,7 @@ for i in range(treeGenAmt):
         
 # enable coordinate displayer
 cordsText = CoordinatesCounter()
-# teleport player to ground so that thet player isnt stuck in ground
+# spawn player to ground so that player isn't stuck in ground
 player.set_position((0, 9.5, 0))
 # start the game
 app.run()
