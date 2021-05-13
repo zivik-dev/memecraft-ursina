@@ -9,6 +9,14 @@ from ursina.prefabs.first_person_controller import FirstPersonController
 
 speedDefiner = False
 
+#automatically enter fulscreen view
+window.fullscreen = True
+window.color=color.black
+Text.size *= 2
+
+Button.color = color.azure
+color.text_color = color.orange
+
 app = Ursina()
 
 ## Load Textures
