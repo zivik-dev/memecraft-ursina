@@ -1,11 +1,11 @@
-<b>How do I update ursina?</b>
+Q- How do I update ursina?
 
     # code
     pip install https://github.com/pokepetter/ursina/archive/master.zip
     # text
 
 
-<b>How should I structure my project?</b>
+Q- How should I structure my project?
 
     Like this:
     # code
@@ -23,7 +23,7 @@
 
 
 
-<b>How do I move the camera?</b>
+Q- How do I move the camera?
 
 The camera is an Entity, so you can move and rotate it just like everything else:
     # code
@@ -32,7 +32,7 @@ The camera is an Entity, so you can move and rotate it just like everything else
 
 
 
-<b>Why should I use Python for game development. Isn't it slow?</b>
+Q- Why should I use Python for game development. Isn't it slow?
 
 Not really. The most performance critical part are written in C++ or shader code.
 Python can make you more productive as a developer and thus make it easier
@@ -41,15 +41,13 @@ to structure your project in a good way, rather than micro-optimize.
 
 
 
-<b>How do I call a function with a delay?</b>
+Q- How do I call a function with a delay?
 
     # code
     invoke(some_function, arg1, kwarg1='some kwarg', delay=2)
     # text
 
-
-
-<b>How do I add lights?</b>
+Q- How do I add lights?
 
 If all you want are some simple lights to make 3D shapes look more interesting,
 look at the program 'lights.py' in the samples folder.  For anything more complicated,
@@ -60,7 +58,7 @@ so keep that in mind when isinstanciation the light.
 
 
 
-<b>How can I use panda3d alongside ursina?</b>
+Q- How can I use panda3d alongside ursina?
 
 What you need to know is that Entity is a NodePath and Ursina is a ShowBase.
 You can also write custom shaders, see panda3d's shader documentation for that.
@@ -68,7 +66,7 @@ You can also write custom shaders, see panda3d's shader documentation for that.
 
 
 
-<b>How do I detect collisions?</b>
+Q- How do I detect collisions?
 
 One way is with raycasts. They can hit anything with a collider.
 
